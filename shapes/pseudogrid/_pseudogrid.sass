@@ -1,0 +1,41 @@
+//CONTENT MAIN
+@if variable-exists(contentWidth)
+@else
+    $contentWidth: 640px !global
+
+.contentMain
+    max-width: $contentWidth
+
+
+//GRID MATH
+@if variable-exists(baseunit)
+@else
+    $baseunit: 32px !global
+
+$unit0: $baseunit*0
+$unit0-5: $baseunit*0.5
+$unit1: $baseunit*1
+$unit1-5: $baseunit*1.5
+$unit2: $baseunit*2
+$unit2-5: $baseunit*2.5
+$unit3: $baseunit*3
+$unit3-5: $baseunit*3.5
+$unit4: $baseunit*4
+$unit4-5: $baseunit*4.5
+$unit5: $baseunit*5
+$unit5-5: $baseunit*5.5
+$unit6: $baseunit*6
+$unit6-5: $baseunit*6.5
+$unit7: $baseunit*7
+$unit7-5: $baseunit*7.5
+$unit8: $baseunit*8
+$unit8-5: $baseunit*8.5
+$unit9: $baseunit*9
+$unit9-5: $baseunit*9.5
+$unit10: $baseunit*10
+	
+//COMPONENTS
+@import components/_lines.sass, components/_columns.sass, components/_rows, components/_padding.sass, components/_sidePadding.sass, components/_spacing.sass, components/_rounding.sass
+
+
+

@@ -1,0 +1,21 @@
+
+[class*="xs-"]:after{
+    visibility:hidden;
+    content: "x";
+}
+[class*="sm-"]:after{
+    visibility:hidden;
+    content: "x";
+}
+[class*="md-"]:after{
+    visibility:hidden;
+    content: "x";
+}
+[class*="lg-"]:after{
+    visibility:hidden;
+    content: "x";
+}
+[class*="xl-"]:after{
+    visibility:hidden;
+    content: "x";
+}

@@ -1,0 +1,238 @@
+$colorPrimary: fff !default	
+$colorSecondary: fff !default	
+$colorTertiary: fff !default
+//Branch Variables
+//images
+//cross sell
+#productFoto
+	background-image: url(./img/product.png)
+#productFotoRatio
+	margin-top: 85%
+//backgrounds
+.bgPrimary .bgPrimaryActive
+	background-image: url("./img/backgroundPrimary.png")
+
+.bgPrimaryActive:hover
+	background-image: none
+	background-image: url("./img/backgroundPrimaryHover.png")
+
+.bgSecondary .bgSecondaryActive
+	
+	background-image: url("./img/backgroundSecondary.png")
+		
+.bgTertiary .bgTertiaryActive
+	background-image: none
+	background-color: white
+//Constans
+//colors
+.borderColorPrimary
+	border-color: $colorPrimary
+.borderColorSecondary
+	border-color: $colorSecondary
+.borderColorTertiary
+	border-color: $colorTertiary
+.borderTop .borderRight .borderBot .borderLeft
+	border-color: $colorSecondary
+.txtPrimary
+	color: $colorPrimary
+.bgPrimary
+	background-color: $colorPrimary
+.txtSecondary
+	color: $colorSecondary
+.bgSecondry
+	background-color: $colorSecondary
+.txtTertiary
+	color: $colorTertiary
+.bgSecondry
+	background-color: $colorTertiary
+//general
+body *
+	-webkit-transition: all 0.5s
+	-moz-transition: all 0.5s
+	-o-transition: all 0.5s
+	transition: all 0.5s
+
+.menu
+	-webkit-transition: border-width 0s
+	-moz-transition: border-width 0s
+	-o-transition: border-width 0s
+	transition: border-width 0s
+
+.colon
+	width: 6px
+	text-align: center
+//layout
+//pseudogrid
+@import pseudogrid/_pseudogrid.sass
+//general
+body
+	box-sizing: border-box
+	-webkit-box-sizing: border-box
+	-moz-box-sizing: border-box
+
+.vh100
+	min-height: 100vh
+	vertical-align: middle
+	background-color: teal
+
+//tables
+table
+	width: 100%
+.columnFirst
+	width: 50%
+	text-align: right
+.columnLast
+	width: 50%
+	text-align: left
+
+//images
+.bgPrimary .bgPrimaryActive
+	background-attachment: fixed
+	background-size: cover
+	background-position: center
+
+.bgSecondary .bgSecondaryActive
+	background-attachment: fixed
+	background-size: cover
+	background-position: center
+
+#Logo
+	background-repeat: no-repeat
+	background-position: center 
+
+#productFoto
+	height: auto
+	width: 640px
+	max-width: 100%
+	background-size: contain
+	background-repeat: no-repeat
+
+.crossFoto
+	height: auto
+	width: 200px
+	max-width: 30%
+	background-size: contain
+	background-repeat: no-repeat
+
+//text
+//format
+a
+	text-decoration: none
+
+body *
+	font-family: Verdana, Geneva, Helvetica, sans-serif
+	overflow: hidden
+	text-align: center
+
+h1
+	text-decoration: none
+
+.header
+	font-weight: 100
+	font-size: large
+	margin-bottom: 32px
+
+.textLeft
+	text-align: left
+	padding-left: 16
+
+.textRight
+	text-align: right
+	padding-right: 16
+
+//opacities
+.opaque
+	opacity: 0.5
+.opaque:hover
+	opacity: 0.85
+.opaque:active
+	opacity: 1
+
+//other: 
+body *
+	margin: auto
+
+.hCenter
+	margin: auto
+
+//borders
+.borderTop
+	border-top-style: solid										
+
+.borderRight
+	border-right-style: solid												
+
+.borderBot
+	border-bottom-style: solid												
+
+.borderLeft
+	border-left-style: solid
+
+.borderTop, .borderRight, .borderBot, .borderLeft
+	@extend .borderColorSecondary
+	@extend .singRound
+
+//appearers
+$basicModifier: -8px
+$bigBorder: 128px
+$fixedModifier: (-1*$bigBorder)
+$absoluteModifier: ($fixedModifier+$basicModifier)
+body
+	position: relative
+	box-sizing: border-box
+%absolute
+	position: absolute
+	left: 50%
+	transform: translate(-50%, 0)
+
+body:hover
+	#topMenu
+		position: fixed
+		top: $fixedModifier
+
+body:hover
+	#footer
+		position: fixed
+		bottom: $fixedModifier
+		border-bottom-style: solid
+		border-bottom-width: $bigBorder
+
+
+%topmenu
+	@extend %absolute, .borderBot
+	z-index: 2
+	top: $absoluteModifier
+	border-top-style: solid
+	border-top-width: $bigBorder
+
+%botmenu
+	@extend %absolute, .borderTop
+	z-index: 1
+	bottom: $basicModifier
+
+#topMenu
+	@extend %topmenu
+
+#footer
+	@extend %botmenu
+
+//menu
+.menu
+	@extend .bgTertiary, .singLine, .singRound
+	span 
+		.button
+			width: 100%
+	@extend .contentMain
+
+.button
+	@extend .singRound
+	@extend .quadCol
+	display: inline-block
+	a
+		@extend .opaque
+		@extend .txtPrimary
+		
+
+//apply class to content
+#topMenu, #footer
+	@extend .menu
